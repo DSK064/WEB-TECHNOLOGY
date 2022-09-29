@@ -5,15 +5,15 @@ let stolenItems3 = {piano : 500, stero : 300}
 let name1 = "Brutus";
 let value = 300;
 
-console.log(covertToMap(stolenItems1,name1,value))
+console.log(addName(stolenItems1,name1,value))
 
 value = 400;
-console.log(covertToMap(stolenItems2,name1,value))
+console.log(addName(stolenItems2,name1,value))
 
 name1 = "Caligula"
-console.log(covertToMap(stolenItems3,name1,value))
+console.log(addName(stolenItems3,name1,value))
 
-function covertToMap(stolenItems, name1, value)
+/*function covertToMap(stolenItems, name1, value)
 {
     if(stolenItems != null)
     {
@@ -27,4 +27,11 @@ function covertToMap(stolenItems, name1, value)
         map.set(name1, value);
         return map;
     }
+}
+*/
+
+function addName(Object, name, value)
+{
+    Object[name] = value;
+    return Object;
 }
