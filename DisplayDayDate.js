@@ -6,8 +6,9 @@ function getTime()
     if(date.getHours() > 12)
     {
         hours = date.getHours() - 12;
+        return hours+" PM:"+date.getMinutes()+":"+date.getSeconds();
     }
-    return hours+":"+date.getMinutes()+":"+date.getSeconds();
+    else return date.getHours()+" AM:"+date.getMinutes()+":"+date.getSeconds();
 
 }
 function getDay()
