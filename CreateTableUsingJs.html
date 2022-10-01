@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+    </style>
+    <script>
+        function create()
+        {
+            const rows = window.prompt("enter the number of rows");
+            const cols = window.prompt("enter the number of columns");
+            for(let r = 0; r < parseInt(rows); r++)
+            {
+                let tempRow = document.getElementById('tbl').insertRow(r);
+                for(let c = 0; c < parseInt(cols); c++)
+                {
+                    let tempCol = tempRow.insertCell(c);
+                    tempCol.innerHTML = "("+r+","+c+")";
+                }
+            }
+            
+
+
+        }
+    </script>
+</head>
+<body>
+    <h3 style="text-align:center">Creating a table</h3><br><br>
+    <table id="tbl"></table>
+    <div style="text-align:center;">
+        <button style="font-size:large;color:blue;" onclick="create()">click to Create</button>
+    </div>
+    
+</body>
+</html>

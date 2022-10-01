@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function insertValue(num)
+        {  
+            document.form1.view.value += num;  
+        }
+        function findTotal()
+        {  
+            let oldValue = document.form1.view.value;  
+            if(oldValue)  
+            {  
+                document.form1.view.value = eval(oldValue)  
+            }  
+        }
+        function reemoveOne()  
+        {  
+            let oldValue = document.form1.view.value;  
+            document.form1.view.value = oldValue.substring(0, oldValue.length - 1);
+        }     
+    </script>
+
+    <style>
+        .calci
+        {
+            width: 200px;
+            height:240px;
+            color: rgb(214, 20, 20);
+            font-size: medium;
+            border-radius: 20px;
+            border-top: 2px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color:rgb(144, 146, 147);
+        }
+
+        h1
+        {
+            text-align: center;
+            color: blue;
+            padding: 23px;
+        }
+
+        .textview
+        {
+            height: 32px;
+            width: 190px;
+            text-align: right;
+            font-size: larger;
+            background-color: rgb(131, 251, 131);
+            padding: 3px;
+        }
+        
+        input:hover
+        {
+            background-color: rgba(84, 249, 109, 0.427);
+        }
+
+        .btn
+        {
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            border-top: 15px;
+            border-bottom:15px;
+            border-left:15px;
+            border-right: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin: 2px;
+            padding: 5px;;
+            background-color: rgb(194, 248, 248);
+        }
+
+        .btn1
+        {
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-align:center;
+            color: blue;
+            background-color: rgb(166, 203, 226);
+        }
+        .btn2
+        {
+            width: 45px;
+            height: 45px;
+            font-size: 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            text-align:center;
+            color: blue;
+            background-color: rgb(230, 134, 134);
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <div class="calci">
+        <form name="form1">  
+            <input class="textview" name = "view">  
+        </form>  
+        <table>
+            <tr>
+                <td>
+                    <input class="btn2" type="button" value="AC" onclick="form1.view.value=''">
+                </td>
+                <td>
+                    <input class="btn2" type="button" value="C" onclick="reemoveOne()">
+                </td>
+                <td>
+                    <input class="btn1" type="button" value="/" onclick="insertValue('/')">
+                </td>
+                <td>
+                    <input class="btn1" type="button" value="x" onclick="insertValue('*')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="btn" type="button" value="7" onclick="insertValue(7)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="8" onclick="insertValue(8)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="9" onclick="insertValue(9)">
+                </td>
+                <td>
+                    <input class="btn1" type="button" value="+" onclick="insertValue('+')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="btn" type="button" value="6" onclick="insertValue(6)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="5" onclick="insertValue(5)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="4" onclick="insertValue(4)">
+                </td>
+                <td>
+                    <input class="btn1" type="button" value="-" onclick="insertValue('-')">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="btn" type="button" value="1" onclick="insertValue(1)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="2" onclick="insertValue(2)">
+                </td>
+                <td>
+                    <input class="btn" type="button" value="3" onclick="insertValue(3)">
+                </td>
+                <td>
+                    <input class="btn1" type="button" value="=" onclick="findTotal()">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

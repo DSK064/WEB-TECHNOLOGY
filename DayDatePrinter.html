@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getDayTime()
+        {
+            let date = new Date();
+            let array = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Satrday"];
+            let a = date.getDay()
+            document.getElementById("btn").innerHTML = "Today: "+array[a]+".";
+            let hours  = 0;
+            if(date.getHours() > 12)
+            {
+                hours = date.getHours() - 12;
+                document.getElementById("btn1").innerHTML = hours+" PM:"+date.getMinutes()+":"+date.getSeconds();
+            }
+            else 
+            document.getElementById("btn1").innerHTML = date.getHours()+" AM:"+date.getMinutes()+":"+date.getSeconds();
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">DayDateDisplayer</h2>
+    <div style="text-align:center;height:20px">
+        <button onclick="getDayTime()">Click to see</button>
+        <p id="btn"></p>
+        <p id="btn1"></p>
+    </div>
+</body>
+</html>

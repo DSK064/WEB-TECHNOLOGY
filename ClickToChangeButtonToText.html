@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeToText()
+        {
+            btn = document.getElementById("wrapper");
+            btn.textContent = "Button changed to text";
+        }
+    </script>
+</head>
+<body>
+    <h2 style="text-align:center;">Button Changer</h2>
+    <div style="text-align: center;margin-top: 100px;" id="wrapper">
+        <button style="color:blue" onclick="changeToText()">Click to change</button>
+    </div>
+    
+</body>
+</html>
