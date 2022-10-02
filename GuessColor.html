@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the color</title>
+    <Script>
+        let data = ["225, 27, 27","41, 241, 19","145, 163, 33","59, 19, 203","245, 244, 244","248, 244, 14","240, 21, 225","38, 184, 221","52, 218, 179","13, 67, 35","221, 237, 168","125, 90, 239"];
+        let color; 
+        let count = 6;
+        
+        function displayRgb()
+        {
+            color = colorGenerate();
+            document.getElementById("head1").innerHTML="RGB(" + color + ")";
+        }
+        function colorGenerate()
+        {
+            let pointer = Math.floor(Math.random() * data.length);
+            return data[pointer];
+        }
+        function checkValue(valueStr)
+        {
+            if(color != null)
+            {
+            if(valueStr == color)
+            {
+                document.getElementById("result").innerHTML = "Hurrah! correct.. play again";
+                setTimeout(()=>{window.location.reload();},3000);
+            }
+            else
+            {
+                count--;
+                if(count == 0)
+                {
+                    document.getElementById("result").innerHTML = "You loose!! starting again in few seconds";
+                    setTimeout(()=>{window.location.reload();},2000);
+
+                }
+                else if(count > 0){
+                    document.getElementById("result").innerHTML = "Wrong, chances left: "+count;
+                }
+                
+            }
+        }
+        }
+        function refreshPage()
+        {
+            window.location.reload();
+        }
+
+
+    </Script>
+    <style>
+        body{
+            background-color: rgb(157, 178, 180);
+        }
+
+        .headding1
+        {
+            background-color: aqua;
+            height: 40px;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 50px;
+            padding-left: 35px;
+        }
+
+        #start1
+        {
+            height: 30px;
+            width: 60px;
+            border-radius: 20px;
+            border-top: 1px;
+            border-left: 1px;
+            cursor: pointer;
+            background-color:rgb(13, 228, 38);
+        }
+
+        p{
+            color: rgb(230, 8, 42);
+            font-size: 30px;
+        }
+
+        .btn
+        {
+            height: 70px;
+            width: 70px;
+            border-radius: 15px;
+            border-top:3px;
+            border-left:3px;
+            cursor: pointer;
+        }
+        .rows
+        {
+            height: 90px;
+        }
+        .cols
+        {
+            width: 90px;
+        }
+    </style>
+</head>
+<body>
+    <div class="headding1">
+        <h1><span>Guessing Game</span></h1><br><br>
+    </div>
+    
+    <div style="margin-left: 850px;">
+        <table>
+            <tr>
+                <td class="cols"><button id="start1" onclick="displayRgb()">Start</button></td>
+                <td class="cols"><button id="start1" onclick="refreshPage()">Refresh</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="text-align:center">
+        <h2 id="head1"></h2>
+    </div>
+    <p id="result" style="text-align:center;">Guess the color</p>
+    
+    <div>
+        <table style=" padding-left: 20px; border-radius: 10px; margin-left:auto;margin-right: auto;background-color: rgb(205, 250, 250);">
+            <tr class="rows">
+                <td class="cols">
+                    <button  style="background-color:rgb(225, 27, 27)" class = "btn" onclick="checkValue('225, 27, 27')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(41, 241, 19)" class = "btn" onclick="checkValue('41, 241, 19')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(145, 163, 33)" class = "btn" onclick="checkValue('145, 163, 33')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(59, 19, 203)" class = "btn" onclick="checkValue('59, 19, 203')"></button>
+                </td>
+            </tr>
+            <tr class="rows">
+                <td class="cols">
+                    <button style="background-color:rgb(245, 244, 244)" class = "btn" onclick="checkValue('245, 244, 244')"></button></td>
+                <td class="cols">
+                    <button style="background-color:rgb(248, 244, 14)" class = "btn" onclick="checkValue('248, 244, 14')"></button></td>
+                <td class="cols">
+                    <button style="background-color:rgb(240, 21, 225)" class = "btn" onclick="checkValue('240, 21, 225')"></button></td>
+                <td class="cols">
+                    <button style="background-color:rgb(38, 184, 221)" class = "btn" onclick="checkValue('38, 184, 221')"></button></td>
+            </tr>
+            <tr class="rows">
+                <td class="cols">
+                    <button style="background-color:rgb(52, 218, 179)" class = "btn" onclick="checkValue('52, 218, 179')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(13, 67, 35)" class = "btn" onclick="checkValue('13, 67, 35')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(221, 237, 168)" class = "btn" onclick="checkValue('221, 237, 168')"></button>
+                </td>
+                <td class="cols">
+                    <button style="background-color:rgb(125, 90, 239)" class = "btn" onclick="checkValue('125, 90, 239')"></button>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>
